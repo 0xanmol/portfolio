@@ -35,7 +35,7 @@ export default function Home() {
       <header className="text-center mb-12">
         <h1 className="text-2xl font-medium tracking-tight text-gray-900">Anmol Arora</h1>
         <nav className="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-sm">
-          <a className="px-3 py-1.5 rounded-md hover:bg-gray-50 text-blue-700 transition-colors duration-200" href="mailto:mr.anmolarora@gmail.com">Email</a>
+          <a className="px-3 py-1.5 rounded-md hover:bg-gray-50 text-blue-700 transition-colors duration-200" href="mailto:mr.anmolarora@gmail.com">email</a>
           <span className="text-gray-400 select-none">·</span>
           <a className="px-3 py-1.5 rounded-md hover:bg-gray-50 text-blue-700 transition-colors duration-200" href="https://t.me/anmolaroraeth" target="_blank" rel="noopener noreferrer">telegram</a>
           <span className="text-gray-400 select-none">·</span>
