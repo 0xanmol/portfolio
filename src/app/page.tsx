@@ -96,7 +96,7 @@ export default function Home() {
                         <ul className="list-disc ml-6 mt-2 space-y-1.5 leading-relaxed">
                           <li>Protocol Documentation: Collaborated with Research Engineering to write comprehensive protocol architecture docs for developers.</li>
                           <li>Developer Guides: Created and maintained developer guides, tutorials, and technical content.</li>
-                          <li>Hackquest Learning Track: Designed and built the complete Eclipse developer learning track on Hackquest, including structured curriculum, hands-on coding exercises, and comprehensive course materials.</li>
+                          <li>Hackquest Learning Track: Designed and built the complete Eclipse developer learning track on Hackquest, including structured curriculum, hands-on coding exercises, and comprehensive course materials. <a href="https://www.hackquest.io/learning-track/Eclipse" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">→ View Course</a></li>
                         </ul>
                       </li>
                       <li><strong>Incubations Program</strong> — Founded and managed the program, onboarding 7+ leading teams across crypto verticals.</li>
@@ -153,7 +153,7 @@ export default function Home() {
                   <AccordionContent>
                     <ul className="list-disc ml-6 text-sm space-y-2 leading-relaxed">
                       <li><strong>DevRel/Dev Education</strong> — Interface between community and product/engineering; onboarded 100+ developers during private testnet.</li>
-                      <li><strong>Dev Ecosystem Growth</strong> — Designed the RFP Program and GTM for Private Beta; organised technical sessions and meetups.</li>
+                      <li><strong>Dev Ecosystem Growth</strong> — Designed the RFP Program and GTM for Private Beta; organised technical sessions and meetups. <a href="https://0xanmol.notion.site/Anmol-Arora-848dbcb276b94ec0abae8665b5bb2be5" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">→ Demo Applications</a></li>
                       <li><strong>Partnerships</strong> — Conducted discovery calls to onboard leading teams in the Modular space.</li>
                       <li><strong>Marketing</strong> — Executed campaigns increasing Discord & Twitter engagement by 50%.</li>
                     </ul>
