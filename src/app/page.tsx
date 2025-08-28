@@ -45,7 +45,7 @@ export default function Home() {
           <span className="text-gray-400 select-none">·</span>
           <a className="px-3 py-1.5 rounded-md hover:bg-gray-50 text-blue-700 transition-colors duration-200" href="https://linkedin.com/in/0xanmol" target="_blank" rel="noopener noreferrer">linkedin</a>
           <span className="text-gray-400 select-none">·</span>
-          <a className="px-3 py-1.5 rounded-md hover:bg-gray-50 text-blue-700 transition-colors duration-200" href="https://0xanmol.notion.site/Anmol-Arora-848dbcb276b94ec0abae8665b5bb2be5" target="_blank" rel="noopener noreferrer">full portfolio</a>
+          <a className="px-3 py-1.5 rounded-md hover:bg-gray-50 text-blue-700 transition-colors duration-200" href="https://drive.google.com/file/d/1WrvnlBoX76D50pjL7EpiTo9mmgAghdur/view?usp=sharing" target="_blank" rel="noopener noreferrer">resume</a>
         </nav>
         {/* Mobile TOC */}
         <nav className="mt-6 md:hidden flex gap-4 justify-center text-xs text-gray-600">
