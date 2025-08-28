@@ -1,118 +1,120 @@
 "use client";
 import { useEffect, useState } from "react";
 
-interface EasterEggCatProps {
-  isVisible: boolean;
-  onComplete: () => void;
-}
-
-export default function EasterEggCat({ isVisible, onComplete }: EasterEggCatProps) {
-  const [catState, setCatState] = useState<"walking" | "sitting" | "leaving">("walking");
-  const [position, setPosition] = useState(-100);
+export default function LazyCat() {
+  const [catState, setCatState] = useState<"sleeping" | "lazy" | "stretching" | "yawning">("sleeping");
+  const [eyesOpen, setEyesOpen] = useState(false);
 
   useEffect(() => {
-    if (!isVisible) {
-      setPosition(-100);
-      setCatState("walking");
-      return;
-    }
+    // Random state changes for natural lazy behavior
+    const stateInterval = setInterval(() => {
+      const states: Array<"sleeping" | "lazy" | "stretching" | "yawning"> = ["sleeping", "lazy", "stretching", "yawning"];
+      const randomState = states[Math.floor(Math.random() * states.length)];
+      setCatState(randomState);
+      
+      // Random eye opening/closing
+      if (randomState === "lazy" || randomState === "yawning") {
+        setEyesOpen(Math.random() > 0.3);
+      } else if (randomState === "stretching") {
+        setEyesOpen(true);
+      } else {
+        setEyesOpen(false);
+      }
+    }, 3000 + Math.random() * 4000); // Random interval between 3-7 seconds
 
-    const walkAcrossScreen = () => {
-      const startTime = Date.now();
-      const duration = 4000; // 4 seconds to walk across
-      const screenWidth = window.innerWidth;
-      
-      const animate = () => {
-        const elapsed = Date.now() - startTime;
-        const progress = elapsed / duration;
-        
-        if (progress < 1) {
-          const newPosition = -100 + (progress * (screenWidth + 200));
-          setPosition(newPosition);
-          requestAnimationFrame(animate);
-        } else {
-          // Cat reached the other side, sit for a moment
-          setCatState("sitting");
-          setPosition(screenWidth - 50);
-          
-          // After sitting, leave
-          setTimeout(() => {
-            setCatState("leaving");
-            setTimeout(() => {
-              onComplete();
-            }, 1000);
-          }, 2000);
-        }
-      };
-      
-      requestAnimationFrame(animate);
+    // Occasional blinking when awake
+    const blinkInterval = setInterval(() => {
+      if (eyesOpen && catState !== "sleeping") {
+        setEyesOpen(false);
+        setTimeout(() => setEyesOpen(true), 150);
+      }
+    }, 2000 + Math.random() * 3000);
+
+    return () => {
+      clearInterval(stateInterval);
+      clearInterval(blinkInterval);
     };
-
-    walkAcrossScreen();
-  }, [isVisible, onComplete]);
-
-  if (!isVisible) return null;
+  }, [catState, eyesOpen]);
 
   return (
-    <div
-      className={`fixed bottom-20 z-50 transition-all duration-1000 ${
-        catState === "leaving" ? "opacity-0 translate-y-4" : "opacity-100"
-      }`}
-      style={{ left: `${position}px` }}
-    >
+    <div className="fixed bottom-4 right-4 z-50 transition-all duration-1000">
       {/* Cat Body */}
       <div className="relative">
-        {/* Cat Silhouette */}
-        <div className="relative">
-          {/* Main Body */}
-          <div className={`w-16 h-8 bg-black rounded-full relative ${
-            catState === "walking" ? "animate-walking-bob" : ""
-          }`}>
-            {/* Head */}
-            <div className="absolute -left-6 -top-1 w-10 h-10 bg-black rounded-full">
-              {/* Ears */}
-              <div className="absolute -top-2 left-1 w-3 h-4 bg-black rounded-t-full transform -rotate-12"></div>
-              <div className="absolute -top-2 right-1 w-3 h-4 bg-black rounded-t-full transform rotate-12"></div>
-              
-              {/* Eyes */}
-              <div className="absolute top-3 left-2 flex space-x-2">
-                <div className={`w-1.5 h-1.5 bg-green-400 rounded-full ${catState === "sitting" ? "animate-pulse" : ""}`}></div>
-                <div className={`w-1.5 h-1.5 bg-green-400 rounded-full ${catState === "sitting" ? "animate-pulse" : ""}`}></div>
-              </div>
+        {/* Main Body */}
+        <div className={`w-20 h-10 bg-black rounded-full relative transition-all duration-1000 ${
+          catState === "stretching" ? "scale-110 translate-y-1" : catState === "sleeping" ? "scale-95" : ""
+        }`}>
+          {/* Head */}
+          <div className="absolute -left-7 -top-2 w-12 h-12 bg-black rounded-full">
+            {/* Ears */}
+            <div className="absolute -top-2 left-2 w-3 h-5 bg-black rounded-t-full transform -rotate-12"></div>
+            <div className="absolute -top-2 right-2 w-3 h-5 bg-black rounded-t-full transform rotate-12"></div>
+            
+            {/* Inner ears */}
+            <div className="absolute -top-1 left-2.5 w-2 h-3 bg-gray-800 rounded-t-full transform -rotate-12"></div>
+            <div className="absolute -top-1 right-2.5 w-2 h-3 bg-gray-800 rounded-t-full transform rotate-12"></div>
+            
+            {/* Eyes */}
+            <div className="absolute top-4 left-3 flex space-x-2">
+              {catState === "sleeping" ? (
+                // Sleeping eyes (closed)
+                <>
+                  <div className="w-3 h-1 bg-gray-700 rounded-full"></div>
+                  <div className="w-3 h-1 bg-gray-700 rounded-full"></div>
+                </>
+              ) : eyesOpen ? (
+                // Open eyes
+                <>
+                  <div className="w-2 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                  <div className="w-2 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                </>
+              ) : (
+                // Blinking
+                <>
+                  <div className="w-2 h-1 bg-gray-700 rounded-full"></div>
+                  <div className="w-2 h-1 bg-gray-700 rounded-full"></div>
+                </>
+              )}
             </div>
+
+            {/* Nose */}
+            <div className="absolute top-6 left-5 w-1.5 h-1 bg-pink-400 rounded-full"></div>
             
-            {/* Tail */}
-            <div className={`absolute -right-8 top-0 w-12 h-3 bg-black rounded-full origin-left transform transition-transform duration-500 ${
-              catState === "walking" ? "animate-tail-swish" : catState === "sitting" ? "rotate-12 animate-tail-swish" : ""
-            }`}></div>
-            
-            {/* Legs (only visible when walking) */}
-            {catState === "walking" && (
-              <>
-                <div className="absolute bottom-0 left-2 w-2 h-4 bg-black rounded-b-full animate-pulse"></div>
-                <div className="absolute bottom-0 left-6 w-2 h-4 bg-black rounded-b-full animate-pulse"></div>
-                <div className="absolute bottom-0 right-6 w-2 h-4 bg-black rounded-b-full animate-pulse"></div>
-                <div className="absolute bottom-0 right-2 w-2 h-4 bg-black rounded-b-full animate-pulse"></div>
-              </>
+            {/* Mouth (subtle) */}
+            {catState === "yawning" && (
+              <div className="absolute top-7 left-4.5 w-2 h-2 bg-pink-300 rounded-full opacity-70"></div>
             )}
           </div>
+          
+          {/* Tail */}
+          <div className={`absolute -right-10 top-1 w-16 h-4 bg-black rounded-full origin-left transition-all duration-2000 ${
+            catState === "lazy" ? "animate-lazy-tail-swish" : 
+            catState === "stretching" ? "rotate-12" : 
+            catState === "sleeping" ? "rotate-6" : ""
+          }`}></div>
+          
+          {/* Paws (visible when stretching) */}
+          {catState === "stretching" && (
+            <>
+              <div className="absolute -bottom-1 left-2 w-3 h-5 bg-black rounded-full transition-all duration-500"></div>
+              <div className="absolute -bottom-1 left-7 w-3 h-5 bg-black rounded-full transition-all duration-500"></div>
+              <div className="absolute -bottom-1 right-7 w-3 h-5 bg-black rounded-full transition-all duration-500"></div>
+              <div className="absolute -bottom-1 right-2 w-3 h-5 bg-black rounded-full transition-all duration-500"></div>
+            </>
+          )}
         </div>
 
-        {/* Sitting Animation */}
-        {catState === "sitting" && (
-          <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-            <div className="w-3 h-6 bg-black rounded-full opacity-20 animate-pulse"></div>
+        {/* Sleeping Z's */}
+        {catState === "sleeping" && (
+          <div className="absolute -top-8 -right-2 text-gray-400 text-xs animate-bounce-slow">
+            <div className="opacity-70">z</div>
+            <div className="opacity-50 ml-1 -mt-1">z</div>
+            <div className="opacity-30 ml-2 -mt-1">z</div>
           </div>
         )}
 
-        {/* Paw Prints Trail */}
-        {catState === "walking" && (
-          <div className="absolute top-12 -left-20 flex space-x-6 opacity-30">
-            <div className="w-2 h-2 bg-black rounded-full animate-fade-out"></div>
-            <div className="w-2 h-2 bg-black rounded-full animate-fade-out animation-delay-200"></div>
-            <div className="w-2 h-2 bg-black rounded-full animate-fade-out animation-delay-400"></div>
-          </div>
-        )}
+        {/* Comfort Shadow */}
+        <div className="absolute -bottom-1 left-2 w-16 h-3 bg-black opacity-10 rounded-full blur-sm"></div>
       </div>
     </div>
   );
