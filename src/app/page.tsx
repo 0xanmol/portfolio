@@ -337,7 +337,7 @@ export default function Home() {
             <a href="https://x.com/0xanmol/status/1875241573883245023" className="font-medium text-blue-700 hover:underline">Want Real Dev Adoption? Do the Hard Stuff</a>
           </li>
           <li>
-            <a href="https://0xanmol.hashnode.dev/polygon2" target="_blank" rel="noopener noreferrer" className="font-medium text-blue-700 hover:underline">Decoding Polygon 2.0: A Primer</a> — Deep dive into Polygon's value layer architecture and protocol improvements
+            <a href="https://0xanmol.hashnode.dev/polygon2" target="_blank" rel="noopener noreferrer" className="font-medium text-blue-700 hover:underline">Decoding Polygon 2.0: A Primer</a> — Deep dive into Polygon&apos;s value layer architecture and protocol improvements
           </li>
           <li>
             <a href="https://medium.com/@0xanmol/solana-noob-this-is-for-you-a5e8" target="_blank" rel="noopener noreferrer" className="font-medium text-blue-700 hover:underline">Solana Deep Dive for Noobs</a> — Comprehensive Solana development guide for beginners
