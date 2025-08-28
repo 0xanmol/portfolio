@@ -1,6 +1,6 @@
 "use client";
-import LazyCat from "./EasterEggCat";
+import CuteCat from "./EasterEggCat";
 
 export default function EasterEggManager() {
-  return <LazyCat />;
+  return <CuteCat />;
 }
