@@ -45,7 +45,7 @@ export default function Home() {
           <span className="text-gray-400 select-none">·</span>
           <a className="px-3 py-1.5 rounded-md hover:bg-gray-50 text-blue-700 transition-colors duration-200" href="https://linkedin.com/in/0xanmol" target="_blank" rel="noopener noreferrer">linkedin</a>
           <span className="text-gray-400 select-none">·</span>
-          <a className="px-3 py-1.5 rounded-md hover:bg-gray-50 text-blue-700 transition-colors duration-200" href="#">download pdf</a>
+          <a className="px-3 py-1.5 rounded-md hover:bg-gray-50 text-blue-700 transition-colors duration-200" href="https://0xanmol.notion.site/Anmol-Arora-848dbcb276b94ec0abae8665b5bb2be5" target="_blank" rel="noopener noreferrer">full portfolio</a>
         </nav>
         {/* Mobile TOC */}
         <nav className="mt-6 md:hidden flex gap-4 justify-center text-xs text-gray-600">
@@ -168,16 +168,16 @@ export default function Home() {
               <CardTitle className="text-base font-medium text-gray-900 leading-relaxed">Polygon Labs — DevRel Engineer<span className="text-gray-500 font-normal"> · Mar 2023 — Feb 2024 · Remote · Full‑time</span></CardTitle>
             </CardHeader>
             <CardContent className="pt-0 pb-4">
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">Summary: Led Polygon Learn and ChainWarp; supported 1000+ hackathon projects; authored technical content and workshops.</p>
+              <p className="text-gray-600 text-sm mb-4 leading-relaxed">Summary: Led Polygon Learn and ChainWarp (5000+ engineers); supported 1000+ hackathon projects; authored technical content and workshops.</p>
               <Accordion type="single" collapsible>
                 <AccordionItem value="polygon">
                   <AccordionTrigger className="text-sm text-gray-700 hover:text-gray-900 transition-colors duration-200">Expand details</AccordionTrigger>
                   <AccordionContent>
                     <ul className="list-disc ml-6 text-sm space-y-2 leading-relaxed">
                       <li><strong>Polygon Learn</strong> — DRI/acting TPM; designed GTM impacting partner onboarding.</li>
-                      <li><strong>ChainWarp</strong> — Founder & DRI; created senior‑level Web3 content and program structure; onboarded partners like Flipkart, Myntra, Cleartrip, Wipro, TechMahindra, HealthPlus.</li>
+                      <li><strong>ChainWarp</strong> — Founder & DRI of 3-week fellowship program for 5000+ Flipkart engineers transitioning to Web3; created senior‑level curriculum and program structure; onboarded enterprise partners including Myntra, Cleartrip, Wipro, TechMahindra, HealthPlus. <a href="https://0xanmol.notion.site/Anmol-Arora-848dbcb276b94ec0abae8665b5bb2be5" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">→ Program Details</a></li>
                       <li><strong>ETHGlobal Hackathons & Polygon Connect</strong> — Onboarded devs, mitigated queries, judged 1000+ projects; onboarded 10+ partners for $80k sponsorships.</li>
-                      <li><strong>Technical Content & Workshops</strong> — Blogs on Polygon ID and 2.0; led online/offline workshops.</li>
+                      <li><strong>Technical Content & Workshops</strong> — Authored technical blogs on Polygon ID and 2.0; led online/offline workshops. <a href="https://0xanmol.notion.site/Anmol-Arora-848dbcb276b94ec0abae8665b5bb2be5" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">→ Content Portfolio</a></li>
                     </ul>
                     <p className="mt-2 text-[14px]"><em>Flipkart–Polygon COE</em></p>
                     <ul className="list-disc ml-6 text-sm space-y-2 leading-relaxed">
@@ -335,6 +335,15 @@ export default function Home() {
         <ul className="text-sm text-gray-700 space-y-3 ml-6 list-disc leading-relaxed">
           <li>
             <a href="https://x.com/0xanmol/status/1875241573883245023" className="font-medium text-blue-700 hover:underline">Want Real Dev Adoption? Do the Hard Stuff</a>
+          </li>
+          <li>
+            <a href="https://0xanmol.hashnode.dev/polygon2" target="_blank" rel="noopener noreferrer" className="font-medium text-blue-700 hover:underline">Decoding Polygon 2.0: A Primer</a> — Deep dive into Polygon's value layer architecture and protocol improvements
+          </li>
+          <li>
+            <a href="https://medium.com/@0xanmol/solana-noob-this-is-for-you-a5e8" target="_blank" rel="noopener noreferrer" className="font-medium text-blue-700 hover:underline">Solana Deep Dive for Noobs</a> — Comprehensive Solana development guide for beginners
+          </li>
+          <li>
+            <a href="https://0xanmol.notion.site/Anmol-Arora-848dbcb276b94ec0abae8665b5bb2be5" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">→ Full Technical Content Portfolio</a>
           </li>
         </ul>
       </section>
