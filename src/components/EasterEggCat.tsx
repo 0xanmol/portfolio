@@ -1,95 +1,117 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function CuteCat() {
-  const [isBlinking, setIsBlinking] = useState(false);
-  const [tailPosition, setTailPosition] = useState(0);
+export default function SlimWalkingCat() {
+  const [position, setPosition] = useState({ x: -80, y: 0 });
+  const [direction, setDirection] = useState(1); // 1 for right, -1 for left
+  const [isWalking] = useState(true);
+  const [legPhase, setLegPhase] = useState(0);
 
   useEffect(() => {
-    // Random blinking
-    const blinkInterval = setInterval(() => {
-      setIsBlinking(true);
-      setTimeout(() => setIsBlinking(false), 150);
-    }, 2000 + Math.random() * 3000);
+    if (typeof window === 'undefined') return;
+    
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+    const catWidth = 60;
+    const speed = 0.8;
 
-    // Gentle tail swaying
-    const tailInterval = setInterval(() => {
-      setTailPosition(Math.random() * 20 - 10); // -10 to 10 degrees
-    }, 1500 + Math.random() * 2000);
+    const animate = () => {
+      if (!isWalking) return;
+
+      setPosition(prev => {
+        let newX = prev.x + (speed * direction);
+        let newY = prev.y;
+        let newDirection = direction;
+
+        // Bounce off edges
+        if (newX > screenWidth) {
+          newX = screenWidth;
+          newDirection = -1;
+        } else if (newX < -catWidth) {
+          newX = -catWidth;
+          newDirection = 1;
+        }
+
+        // Occasionally change vertical position for variety
+        if (Math.random() < 0.002) {
+          newY = Math.random() * (screenHeight - 200) + 50;
+        }
+
+        setDirection(newDirection);
+        return { x: newX, y: newY };
+      });
+
+      // Animate legs
+      setLegPhase(prev => (prev + 0.3) % (Math.PI * 2));
+    };
+
+    const animationId = setInterval(animate, 16); // ~60fps
+
+    // Random direction changes
+    const directionChange = setInterval(() => {
+      if (Math.random() < 0.1) {
+        setDirection(prev => -prev);
+      }
+    }, 3000);
 
     return () => {
-      clearInterval(blinkInterval);
-      clearInterval(tailInterval);
+      clearInterval(animationId);
+      clearInterval(directionChange);
     };
-  }, []);
+  }, [direction, isWalking]);
+
+  const legOffset1 = Math.sin(legPhase) * 2;
+  const legOffset2 = Math.sin(legPhase + Math.PI) * 2;
 
   return (
-    <div className="fixed top-4 right-4 z-50">
-      {/* Cat Body */}
+    <div
+      className="fixed z-50 transition-all duration-300 pointer-events-none"
+      style={{
+        left: `${position.x}px`,
+        top: `${position.y || (typeof window !== 'undefined' ? window.innerHeight - 120 : 400)}px`,
+        transform: direction === -1 ? 'scaleX(-1)' : 'scaleX(1)'
+      }}
+    >
+      {/* Slim Cat Body */}
       <div className="relative">
-        {/* Main Body (sitting position) */}
-        <div className="w-16 h-20 bg-black rounded-full relative">
+        
+        {/* Main Body - sleek and elongated */}
+        <div className="w-12 h-6 bg-black rounded-full relative animate-walking-bob">
           
-          {/* Head (bigger and rounder) */}
-          <div className="absolute -left-2 -top-6 w-20 h-20 bg-black rounded-full">
+          {/* Head - proportional and sleek */}
+          <div className="absolute -left-4 -top-1 w-8 h-8 bg-black rounded-full">
             
-            {/* Ears */}
-            <div className="absolute -top-3 left-3 w-6 h-8 bg-black rounded-t-full transform -rotate-12"></div>
-            <div className="absolute -top-3 right-3 w-6 h-8 bg-black rounded-t-full transform rotate-12"></div>
+            {/* Ears - sharp and alert */}
+            <div className="absolute -top-2 left-1 w-2 h-3 bg-black rounded-t-full transform -rotate-12"></div>
+            <div className="absolute -top-2 right-1 w-2 h-3 bg-black rounded-t-full transform rotate-12"></div>
             
-            {/* Inner ears (pink) */}
-            <div className="absolute -top-2 left-4 w-4 h-6 bg-pink-300 rounded-t-full transform -rotate-12"></div>
-            <div className="absolute -top-2 right-4 w-4 h-6 bg-pink-300 rounded-t-full transform rotate-12"></div>
-            
-            {/* Eyes (big and round like reference) */}
-            <div className="absolute top-6 left-4 flex space-x-2">
-              {isBlinking ? (
-                <>
-                  <div className="w-4 h-1 bg-gray-700 rounded-full"></div>
-                  <div className="w-4 h-1 bg-gray-700 rounded-full"></div>
-                </>
-              ) : (
-                <>
-                  {/* Outer eye circles */}
-                  <div className="w-6 h-6 bg-yellow-400 rounded-full relative">
-                    {/* Inner eye circles */}
-                    <div className="absolute top-1 left-1 w-4 h-4 bg-black rounded-full">
-                      {/* Eye shine */}
-                      <div className="absolute top-0.5 left-0.5 w-1.5 h-1.5 bg-white rounded-full"></div>
-                    </div>
-                  </div>
-                  <div className="w-6 h-6 bg-yellow-400 rounded-full relative">
-                    <div className="absolute top-1 left-1 w-4 h-4 bg-black rounded-full">
-                      <div className="absolute top-0.5 left-0.5 w-1.5 h-1.5 bg-white rounded-full"></div>
-                    </div>
-                  </div>
-                </>
-              )}
+            {/* Eyes - sleek almond shape */}
+            <div className="absolute top-2 left-1.5 flex space-x-1">
+              <div className="w-1.5 h-1.5 bg-green-400 rounded-full opacity-80"></div>
+              <div className="w-1.5 h-1.5 bg-green-400 rounded-full opacity-80"></div>
             </div>
 
-            {/* Nose (small pink dot) */}
-            <div className="absolute top-12 left-9 w-1.5 h-1.5 bg-pink-400 rounded-full"></div>
-            
-            {/* Small mouth */}
-            <div className="absolute top-13 left-8 w-3 h-1 border-b-2 border-gray-800 rounded-full"></div>
+            {/* Nose */}
+            <div className="absolute top-4 left-3 w-1 h-1 bg-pink-400 rounded-full"></div>
           </div>
           
-          {/* Tail (curved behind) */}
-          <div 
-            className="absolute -right-6 top-4 w-3 h-16 bg-black rounded-full origin-bottom transition-transform duration-1000"
-            style={{ transform: `rotate(${tailPosition + 15}deg)` }}
-          ></div>
+          {/* Elegant tail - long and curved */}
+          <div className="absolute -right-6 top-1 w-8 h-2 bg-black rounded-full origin-left animate-tail-flow"></div>
+          <div className="absolute -right-12 top-0 w-6 h-2 bg-black rounded-full origin-left animate-tail-tip"></div>
           
-          {/* Front paws */}
-          <div className="absolute bottom-0 left-2 w-3 h-4 bg-black rounded-full"></div>
-          <div className="absolute bottom-0 right-2 w-3 h-4 bg-black rounded-full"></div>
-          
-          {/* Chest/belly area */}
-          <div className="absolute top-2 left-4 w-8 h-12 bg-black rounded-full"></div>
+          {/* Walking legs - animated */}
+          <div className="absolute bottom-0 left-1 w-1.5 h-4 bg-black rounded-full" 
+               style={{ transform: `translateY(${legOffset1}px)` }}></div>
+          <div className="absolute bottom-0 left-3 w-1.5 h-4 bg-black rounded-full"
+               style={{ transform: `translateY(${legOffset2}px)` }}></div>
+          <div className="absolute bottom-0 right-3 w-1.5 h-4 bg-black rounded-full"
+               style={{ transform: `translateY(${legOffset1}px)` }}></div>
+          <div className="absolute bottom-0 right-1 w-1.5 h-4 bg-black rounded-full"
+               style={{ transform: `translateY(${legOffset2}px)` }}></div>
         </div>
 
-        {/* Subtle shadow */}
-        <div className="absolute -bottom-1 left-2 w-12 h-2 bg-black opacity-10 rounded-full blur-sm"></div>
+        {/* Dynamic shadow */}
+        <div className="absolute -bottom-1 left-0 w-12 h-1.5 bg-black opacity-20 rounded-full blur-sm animate-pulse"></div>
       </div>
     </div>
   );

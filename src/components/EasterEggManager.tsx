@@ -1,6 +1,6 @@
 "use client";
-import CuteCat from "./EasterEggCat";
+import SlimWalkingCat from "./EasterEggCat";
 
 export default function EasterEggManager() {
-  return <CuteCat />;
+  return <SlimWalkingCat />;
 }
