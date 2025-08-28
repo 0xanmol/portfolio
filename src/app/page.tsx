@@ -340,7 +340,7 @@ export default function Home() {
             <a href="https://0xanmol.hashnode.dev/polygon2" target="_blank" rel="noopener noreferrer" className="font-medium text-blue-700 hover:underline">Decoding Polygon 2.0: A Primer</a> — Deep dive into Polygon&apos;s value layer architecture and protocol improvements
           </li>
           <li>
-            <a href="https://medium.com/@0xanmol/solana-noob-this-is-for-you-a5e8" target="_blank" rel="noopener noreferrer" className="font-medium text-blue-700 hover:underline">Solana Deep Dive for Noobs</a> — Comprehensive Solana development guide for beginners
+            <a href="https://0xanmol.hashnode.dev/apaar-id" target="_blank" rel="noopener noreferrer" className="font-medium text-blue-700 hover:underline">APAAR ID Reimagined</a> — How Polygon ID and decentralisation can improve APAAR ID
           </li>
           <li>
             <a href="https://0xanmol.notion.site/Anmol-Arora-848dbcb276b94ec0abae8665b5bb2be5" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">→ Full Technical Content Portfolio</a>
