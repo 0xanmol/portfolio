@@ -86,7 +86,7 @@ export default function Home() {
               <CardTitle className="text-base font-medium text-gray-900 leading-relaxed">Eclipse Labs — Head of Developer Relations<span className="text-gray-500 font-normal"> · Aug 2024 — Sep 2025 · Remote · Full‑time</span></CardTitle>
             </CardHeader>
             <CardContent className="pt-0 pb-4">
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">Summary: Revamped docs, led incubations (7+ teams), provided deep technical support, and drove ecosystem coordination; built internal devtools.</p>
+              <p className="text-gray-600 text-sm mb-4 leading-relaxed">Summary: Shipped revamped docs, launched incubation program (7+ teams), debugged integration problems and unblocked developer teams, coordinated ecosystem partnerships; built custom developer tooling.</p>
               <Accordion type="single" collapsible>
                 <AccordionItem value="eclipse">
                   <AccordionTrigger className="text-sm text-gray-700 hover:text-gray-900 transition-colors duration-200">Expand details</AccordionTrigger>
@@ -126,7 +126,7 @@ export default function Home() {
               <CardTitle className="text-base font-medium text-gray-900 leading-relaxed">Fleek Network — Contractor<span className="text-gray-500 font-normal"> · Jun 2024 — Jul 2024 · Remote</span></CardTitle>
             </CardHeader>
             <CardContent className="pt-0 pb-4">
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">Summary: Ran ETHCC hacker house ops and assisted devs with debugging/integrations; met all KPIs.</p>
+              <p className="text-gray-600 text-sm mb-4 leading-relaxed">Summary: Managed developer engagement at ETHCC; debugged complex integration issues and guided successful implementations; met all KPIs.</p>
               <Accordion type="single" collapsible>
                 <AccordionItem value="fleek">
                   <AccordionTrigger className="text-sm text-gray-700 hover:text-gray-900 transition-colors duration-200">Expand details</AccordionTrigger>
@@ -143,19 +143,19 @@ export default function Home() {
 
           <Card className="border border-gray-200 shadow-sm hover:shadow-md transition-shadow duration-200">
             <CardHeader className="py-4">
-              <CardTitle className="text-base font-medium text-gray-900 leading-relaxed">Stackr Labs — Ecosystem Lead & DevRel<span className="text-gray-500 font-normal"> · Feb 2024 — Jul 2024 · Remote · Full‑time</span></CardTitle>
+              <CardTitle className="text-base font-medium text-gray-900 leading-relaxed">Stackr Labs — Founding DevRel & Ecosystem Lead<span className="text-gray-500 font-normal"> · Feb 2024 — Jul 2024 · Remote · Full‑time</span></CardTitle>
             </CardHeader>
             <CardContent className="pt-0 pb-4">
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">Summary: Grew developer ecosystem, shipped education, drove RFP/GTM for private beta, partnerships, and marketing.</p>
+              <p className="text-gray-600 text-sm mb-4 leading-relaxed">Summary: Built developer ecosystem from zero, created demo applications and technical tutorials, designed RFP framework for private beta launch, and drove technical partnerships at early-stage startup.</p>
               <Accordion type="single" collapsible>
                 <AccordionItem value="stackr">
                   <AccordionTrigger className="text-sm text-gray-700 hover:text-gray-900 transition-colors duration-200">Expand details</AccordionTrigger>
                   <AccordionContent>
                     <ul className="list-disc ml-6 text-sm space-y-2 leading-relaxed">
-                      <li><strong>DevRel/Dev Education</strong> — Interface between community and product/engineering; onboarded 100+ developers during private testnet.</li>
-                      <li><strong>Dev Ecosystem Growth</strong> — Designed the RFP Program and GTM for Private Beta; organised technical sessions and meetups. <a href="https://0xanmol.notion.site/Anmol-Arora-848dbcb276b94ec0abae8665b5bb2be5" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">→ Demo Applications</a></li>
-                      <li><strong>Partnerships</strong> — Conducted discovery calls to onboard leading teams in the Modular space.</li>
-                      <li><strong>Marketing</strong> — Executed campaigns increasing Discord & Twitter engagement by 50%.</li>
+                      <li><strong>Technical Leadership & Architecture</strong> — Drove technical strategy for developer onboarding; designed SDK documentation and integration patterns; architected developer education curriculum for micro-rollup development.</li>
+                      <li><strong>Developer Ecosystem Engineering</strong> — Built developer onboarding pipeline from scratch; created technical RFP program evaluating 50+ applications; engineered GTM strategy for private beta launch; mentored 100+ developers through complex integrations.</li>
+                      <li><strong>Technical Partnerships & Integration</strong> — Conducted technical discovery with modular infrastructure teams; evaluated protocol compatibility and integration complexity; facilitated technical discussions between engineering teams.</li>
+                      <li><strong>Technical Community Building</strong> — Designed and delivered hands-on technical workshops; created demo applications showcasing advanced SDK usage; built community feedback loops into product development. <a href="https://0xanmol.notion.site/Anmol-Arora-848dbcb276b94ec0abae8665b5bb2be5" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">→ Demo Applications</a></li>
                     </ul>
                   </AccordionContent>
                 </AccordionItem>
