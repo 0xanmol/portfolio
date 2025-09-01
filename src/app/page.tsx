@@ -81,7 +81,14 @@ export default function Home() {
 
       <section id="contributing" className="observe-section mb-16">
         <h2 className="text-xl font-medium text-gray-900 mb-6 tracking-tight">Contributing To</h2>
-        <p className="text-gray-600 text-base leading-relaxed">Currently contributing to rareskills.io helping review Solana content, Blueshift.gg with open source content and website fixes, and Rarecode.ai with frontend engineering.</p>
+        <div className="bg-gray-50 border border-gray-100 rounded-lg p-6">
+          <p className="text-gray-600 text-base mb-4 leading-relaxed">Currently helping out with a few side projects:</p>
+          <ul className="text-gray-700 text-base space-y-2 leading-relaxed">
+            <li><strong><a href="https://rareskills.io" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">rareskills.io</a></strong> — Helping review Solana educational content</li>
+            <li><strong><a href="https://blueshift.gg" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Blueshift.gg</a></strong> — Contributing content and platform improvements</li>
+            <li><strong><a href="https://rarecode.ai" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Rarecode.ai</a></strong> — Frontend engineering support</li>
+          </ul>
+        </div>
       </section>
 
       <section id="experience" className="observe-section mb-16">
