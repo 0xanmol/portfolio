@@ -24,6 +24,7 @@ export default function Home() {
 
   const toc = [
     { id: "about", label: "About" },
+    { id: "contributing", label: "Contributing To" },
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "writing", label: "Writing" },
@@ -78,6 +79,11 @@ export default function Home() {
         <p className="text-gray-600 text-base leading-relaxed">Building fun things with friends on the internet.</p>
       </section>
 
+      <section id="contributing" className="observe-section mb-16">
+        <h2 className="text-xl font-medium text-gray-900 mb-6 tracking-tight">Contributing To</h2>
+        <p className="text-gray-600 text-base leading-relaxed">Currently contributing to rareskills.io helping review Solana content, Blueshift.gg with open source content and website fixes, and Rarecode.ai with frontend engineering.</p>
+      </section>
+
       <section id="experience" className="observe-section mb-16">
         <h2 className="text-xl font-medium text-gray-900 mb-6 tracking-tight">Experience</h2>
         <Accordion type="multiple" className="space-y-4">
@@ -86,7 +92,7 @@ export default function Home() {
               <CardTitle className="text-base font-medium text-gray-900 leading-relaxed">Eclipse Labs — Head of Developer Relations<span className="text-gray-500 font-normal"> · Aug 2024 — Sep 2025 · Remote · Full‑time</span></CardTitle>
             </CardHeader>
             <CardContent className="pt-0 pb-4">
-              <p className="text-gray-600 text-sm mb-4 leading-relaxed">Summary: Shipped revamped docs, launched incubation program (7+ teams), debugged integration problems and unblocked developer teams, coordinated ecosystem partnerships; built custom developer tooling.</p>
+                <p className="text-gray-600 text-sm mb-4 leading-relaxed">Summary: Shipped revamped docs, launched incubation program (7+ teams), debugged integration problems and unblocked developer teams, coordinated ecosystem partnerships; built custom developer tooling.</p>
               <Accordion type="single" collapsible>
                 <AccordionItem value="eclipse">
                   <AccordionTrigger className="text-sm text-gray-700 hover:text-gray-900 transition-colors duration-200">Expand details</AccordionTrigger>
