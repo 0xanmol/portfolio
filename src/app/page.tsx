@@ -50,7 +50,7 @@ export default function Home() {
         </nav>
         {/* Mobile TOC */}
         <nav className="mt-6 md:hidden flex gap-4 justify-center text-xs text-gray-600">
-          {toc.map((t) => (
+          {toc.filter(t => ["contributing", "experience", "projects"].includes(t.id)).map((t) => (
             <a key={t.id} href={`#${t.id}`} aria-current={active === t.id ? "location" : undefined} className={active === t.id ? "text-blue-700 font-medium" : "hover:text-gray-900 transition-colors duration-200"}>
               {t.label}
             </a>
