@@ -84,9 +84,9 @@ export default function Home() {
         <div className="bg-gray-50 border border-gray-100 rounded-lg p-6">
           <p className="text-gray-600 text-base mb-4 leading-relaxed">Currently helping out with a few side projects:</p>
           <ul className="text-gray-700 text-base space-y-2 leading-relaxed">
-            <li><strong><a href="https://rareskills.io" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">rareskills.io</a></strong> — Helping review Solana educational content</li>
-            <li><strong><a href="https://blueshift.gg" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Blueshift.gg</a></strong> — Contributing content and platform improvements</li>
+            <li><strong><a href="https://solanamobile.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Solana Labs</a></strong> — Working with the team on Solana Mobile documentation, SDK improvements and example apps</li>
             <li><strong><a href="https://rarecode.ai" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">Rarecode.ai</a></strong> — Frontend engineering support</li>
+            <li><strong><a href="https://rareskills.io" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:underline">rareskills.io</a></strong> — Helping review Solana educational content</li>
           </ul>
         </div>
       </section>
